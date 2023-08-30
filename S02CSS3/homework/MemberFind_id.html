@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemberFInd_id</title>
+    <style>
+        td{
+           font-weight: bold;
+           font-size: 16px;
+           font-family: '굴림';
+           color: rgb(104, 104, 104);
+        }
+        input{
+           background-color: rgb(254, 254, 254);
+           border: rgb(189, 189, 189) solid  0.5px ;
+           height: 18px;
+        }
+        span{
+           font-weight: bold;
+        }
+        select{
+        height: 25px; 
+        border: rgb(189, 189, 189) solid 0.5px;
+        }
+       </style>
+       <script>
+           function change() {
+               var idx = document.getElementById("selector").value;
+            //    console.log(idx)
+               if(idx=="1"){
+                   document.getElementById("show").innerHTML=
+                   '<input type="text" maxlength="3" size="3"> - <input type="text" maxlength="4" size="4"> - <input type="text" maxlength="4" size="4">';
+               }else{
+                   document.getElementById("show").innerHTML=
+                   ' <input type="text" size="12"> @ <input type="text" id="mailaddr" size="12">'+
+                   '  <select id="mailselector" name="mailselect" onchange="mailchange();"> '+
+                       '<option value="">직접입력</option> <option value="gmail.com">gmail.com</option>'+
+                       ' <option value="naver.com">naver.com</option>'+
+                        '<option value="hanmail.net">hanmail.net</option> </select>';
+               }
+           }
+           function mailchange(){
+               var mail = document.getElementById("mailselector").value;
+            //    console.log(mail);
+               document.getElementById("mailaddr").value=mail;
+           }
+       </script>
+   
+   
+   </head>
+   <body>
+       <div  style=" border: 8px rgb(190, 190, 190) groove; width: 780px;">
+          <table style="padding-top: 30px; padding-left: 120px; border-spacing: 20px;">
+           <tr>
+               <td> <span style="color: rgb(184, 0, 0);"> > &nbsp;  </span>이름(대표자명)</td>
+               <td><input type="text" size="40"></td>
+           </tr>
+           <tr>
+               <td> <span style="color: rgb(184, 0, 0);"> > &nbsp;  </span>
+                   <select name="choose" id="selector" onchange="change();" 
+                       style="height: 25px; border: rgb(189, 189, 189) solid 0.5px;">
+                       <option value="1">휴대전화</option>
+                       <option value="2">이메일</option>
+                   </select>
+               </td>
+               <td id="show">
+                  <input type="text" maxlength="3" size="3"> - <input type="text" maxlength="4" size="4"> - <input type="text" maxlength="4" size="4">
+                  
+               </td>
+           </tr>
+          </table>
+          <hr style=" border: dotted 2px ; width: 55%; color: rgb(187, 187, 187);">
+          <div style="text-align: center; padding-top: 60px; padding-bottom: 40px; color: gray;">
+               아이디를 찾기 위해서 이름과 휴대번호 혹은 이메일을 입력하세요.
+           </div>
+       </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="./bootstrap-5.3.0/css/bootstrap.css" rel="stylesheet">
+    <script src="bootstrap-5.3.0/js/bootstrap.bundle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B03Typography</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>hn 태그 사용하기</h2>
+        <h3>순수 hn태그 사용하기</h3>
+        <h1>Bootstrap Heading</h1>
+        <h2>Bootstrap Heading <small>[Subtitle2]</small></h2>
+        <h3>Bootstrap Heading <small>[Subtitle2]</small></h3>
+        <h4>Bootstrap Heading</h4>
+        <h5>Bootstrap Heading</h5>
+        <h6>Bootstrap Heading</h6>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <p class="h1">Bootstrap Heading</p>
+        <p class="h2">Bootstrap Heading <span class="small">[SubTitle2]</span> </p>
+        <p class="h3">Bootstrap Heading <span class="small">[SubTitle3]</span></p>
+        <p class="h4">Bootstrap Heading</p>
+        <p class="h5">Bootstrap Heading</p>
+        <p class="h6">Bootstrap Heading</p>
+    </div>
+    <hr>
+    <h2>텍스트의 각종 효과</h2>
+    <p>형광펜 효과<br>
+        안녕하세요? <span class="mark">서울IT</span>
+        아카데미에 오신걸 <mark>환영</mark>합니다.
+    </p>
+    <p>
+        설명글<br>
+        The <abbr title="World health Oragniztion">WHO</abbr>was founded in 1948.
+        <!-- abbr은 마우스 호버링시 title로 주석이 나옴 -->
+    </p>
+    <dl>
+        <dt>정의목록</dt>
+        <dd>-제목과 같이 설명글을 이와같이 표현한다</dd>
+        <dt>Milk</dt>
+        <dd>-white cold drink</dd>
+    </dl>
+    <p>
+        코드문자 표현<br>
+        The following HTML elements: <code>span</code>
+        <code>section</code>,and <code>div</code>
+        defines a section in a document.
+    </p>
+    <p>
+        키보드(키캡) <br>
+        <kdb>ctrl+c</kdb> : 텍스트를 복사할 때 사용하는 단축키
+        <kdb>ctrl+p</kdb> : 웹브라우저에서 인쇄미리보기 창을 띄워줌
+    </p>
+    <pre style="font-family: 굴림체; font-size: 12px;">
+    pre 태그는 작성한 모양 그대로 웹브라우저에 출력할 수 있게 해준다.
+    줄바꿈도 그대로 적용된                    다
+</pre>
+    <hr>
+    <h2>대소문자변환</h2>
+    <div class="text-lowercase">indicates lowercased
+        text-전체를 소문자로 표현한다</div>
+    <div class="text-uppercase">indicates uppercased
+        text-전체를 대문자로 표현한다</div>
+    <div class="text-capitlaize">indicates capitlaized
+        text-첫글자만 대문자로 표현한다</div>
+    <hr>
+    <h2>텍스트정렬</h2>
+    <p class="text-start">텍스트 좌측정렬시 start를 사용한다</p>
+    <p class="text-center">가운데 정렬. 해당 텍스트의 경우 웹브라우저가
+        좁아지면 텍스트는 자동으로 줄바꿈된다.</p>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu09.html</title>
+    <script>
+        //중복제거를 위한 Set 선언
+        var randomNum = new Set();
+        //size가 10개 될때가지 반복
+        while (randomNum.size<10) {
+            randomNum.add(Math.round(Math.random()*99)+1);
+        }
+        document.write('<h2>난수10개 생성</h2>')
+        document.write('<hr>')
+        //foreach문을 통한 배열 출력
+        randomNum.forEach(element => {
+            document.write(element+" ");
+        });
+        document.write("<hr>");
+        //Math.max() 함수를 통해 가장 큰수 추출하여 출력
+        document.write("가장 큰 수는? "+Math.max(...randomNum));
+        
+        
+        //array버전. 중복제거 안됨.
+        // var randomNum = new Array();
+        // for (var i = 0; i < 10; i++) {
+        //    randomNum[i] =  (Math.round(Math.random()*99)+1);
+        // }
+        // for ( var index = 0; index < randomNum.length; index++) {
+        //     document.write(randomNum[index]+" ");
+        // }
+        // document.write("10개의 난수: "+randomNum+"<br>")
+        // console.log(Math.max(...randomNum));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

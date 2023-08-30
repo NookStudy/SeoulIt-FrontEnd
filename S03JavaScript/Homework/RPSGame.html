@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPSGame.html</title>
+    <script>
+        //rock =1, sissor=2, paper=3
+        function RPSgame(param) {
+            var computer = Math.floor(Math.random()*3)+1;
+            // console.log(computer);
+            document.getElementById('showResult').style.color= 'red';
+            document.getElementById('showResult').style.fontSize= '20px';
+
+            //사용자가 바위일때
+            if(param==1){
+                document.getElementById("user").src = "../images/rock.jpg";
+                if(computer==1){
+                    document.getElementById('com').src="../images/rock.jpg"
+                    document.getElementById('showResult').innerHTML = ('비겼습니다...');
+                    console.log('비겼습니다...')
+                }else if(computer==2){
+                    document.getElementById('com').src="../images/scissors.jpg"
+                    document.getElementById('showResult').innerHTML = ('이겼습니다!!!');
+                    console.log('이겼습니다!!!')
+                }else if(computer==3){
+                    document.getElementById('com').src="../images/paper.jpg"
+                    document.getElementById('showResult').innerHTML = ('졌습니다...');
+                }
+                //사용자가 가위일때
+            }else if(param==2){
+                document.getElementById("user").src = "../images/scissors.jpg";
+                if(computer==1){
+                    document.getElementById('com').src="../images/rock.jpg"
+                    document.getElementById('showResult').innerHTML = ('졌습니다...');
+                    console.log('졌습니다...')
+                }else if(computer==2){
+                    document.getElementById('com').src="../images/scissors.jpg"
+                    document.getElementById('showResult').innerHTML = ('비겼습니다...');
+                    console.log('비겼습니다...')
+                }else if(computer==3){
+                    document.getElementById('com').src="../images/paper.jpg"
+                    document.getElementById('showResult').innerHTML = ('이겼습니다!!!');
+                    console.log('이겼습니다!!!')
+                }
+                //사용자가 보일때
+            }else if(param==3){
+                document.getElementById("user").src = "../images/paper.jpg";
+                if(computer==1){
+                    document.getElementById('com').src="../images/rock.jpg"
+                    document.getElementById('showResult').innerHTML = ('이겼습니다!!!');
+                    console.log('이겼습니다!!!')
+                }else if(computer==2){
+                    document.getElementById('com').src="../images/scissors.jpg"
+                    document.getElementById('showResult').innerHTML = ('졌습니다...');
+                    console.log('졌습니다...')
+                }else if(computer==3){
+                    document.getElementById('com').src="../images/paper.jpg"
+                    document.getElementById('showResult').innerHTML = ('비겼습니다...');
+                    console.log('비겼습니다...')
+                }
+            }
+            
+            
+        }
+
+    </script>
+
+    <style>
+        table{
+            border: 1px solid;
+            border-spacing: 1px;
+            align-content: center;
+            align-self: center;
+        }
+        td{
+            border: 1px solid;
+        }
+        div#table{
+            border: 1px solid;
+            padding: 10px;
+            width: 720px;
+            display: inline-block;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="table" >
+        <table align="center">
+            <tr>
+                <td>컴퓨터</td>
+                <td>나</td>
+            </tr>
+            <tr>
+                <td><img src="../images/start.png" id="com"></td>
+                <td><img src="../images/start.png" id="user"></td>
+            </tr>
+            <tr>
+                <td colspan="2"  id="showResult"> 가위바위보 게임의 승패는....!  </td>
+            </tr>
+        </table>
+        <div style="margin-left: 55px;">
+            <button type="button"  onclick="RPSgame(2);">가위</button>
+            <button type="button"  onclick="RPSgame(1);">바위</button>
+            <button type="button"  onclick="RPSgame(3);">보</button>
+        </div>
+    </div>
+</body>
+</html>

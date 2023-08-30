@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J11Math.html</title>
+    <script>
+        document.write("JS의 core객체 - Math");
+        
+        document.write("-10의 절대값 : "+ Math.abs(-10)+"<br/>");
+        document.write("2의 3승:"+ Math.pow(2,3)+"<br/>");
+        document.write("3.159의 반올림:"+ Math.round(3.159)+"<br/>");
+        document.write("3.159의 올림:"+ Math.ceil(3.159)+"<br/>");
+        document.write("3.159의 내림:"+ Math.floor(3.159)+"<br/>");
+         
+        document.write("난수발생1:"+ Math.random()+"<br/>");
+        document.write("난수발생2(1~10):"+parseInt((Math.random()*10)+1)+"<br/>");
+        
+        document.write("최소값:"+ Math.min(1, 10, -100, -10, 1000, 0) +"<br/>");
+        document.write("최대값:"+ Math.max(1, 10, -100, -10, 1000, 0) +"<br/>");
+        
+        </script>
+        
+</head>
+<body>
+    <script>
+        //버블정렬
+        var setOrdering = function(arr){
+            for(var i=0 ; i<arr.length-1 ; i++) {
+                for(var j=0 ; j<(arr.length-1)-i ; j++) {
+                    if(arr[j] > arr[j+1]) {
+                        temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }					
+                }
+            }
+        }
+        //중복되지않는 난수 6개 생성
+        function getLotto(){
+            //로또번호를 저장할 크기6인 배열을 생성 후 0으로 초기화한다.
+            var lottoStr = "";
+            var lottoNum = [0,0,0,0,0,0];
+            //로또 배열의 인덱스로 숫자를 채울 때 마다 1씩 증가함
+            var index =0;
+            //중복값 확인을 위한 변수
+            var flag = false;
+            /*
+                배열에 중복되지 않는 난수를 하나씩 채워가면서 1씩 증가시킴.
+                총 6개의 난수가 채워지면 while문을 탈출
+            */
+            while (index<6) {
+                /*
+                    1~45사이의 난수를 생성한다.
+                    1.0~1사이의 실사값을 난수로 생성함
+                    2.난수에 45를 곱한 후 소수부를 제거하기 위해 parseInt()사용.
+                    3.0~44까지 정수가 나오므로 결과에 1을 더해준다
+                */
+                var randomNum = Math.round(Math.random()*45)+1;
+                for (var i = 0; i < lottoNum.length; i++) {
+                    if(lottoNum[i]==randomNum){
+                        flag=true;
+                    }
+                    
+                }
+                //중복된 값이 확인되면 while문의 처음으로 돌아가서 난수를 다시 생성.
+                if(flag==true){
+                    flag= false;
+                    continue;
+                }else{
+                    /*
+                        중복된 값이 없다면 처음부터 채움. 채운후에는 index1증가
+                        index의 초기값은 0이고, 후위증가하므로 
+                        0번 index에 값을 채운후 1증가함
+                    */
+                    lottoNum[index++] = randomNum;
+                }
+            }
+            //정렬함수 호출
+            setOrdering(lottoNum);
+
+            //생성된 로또번호를 문자열 변수에 연결해서 저장.
+            for(var i=0; i<lottoNum.length; i++){
+                lottoStr += lottoNum[i]+"&nbsp;";
+            }
+            //웹브라우저에 출력.
+            document.getElementById("lottoNumber").innerHTML=lottoStr;
+        }
+
+    </script>
+    
+    
+    <h2>Lotto(1~45) 번호 생성하기</h2>
+    <button type="button" onclick="getLotto();">
+        로또번호생성하기
+    </button>
+    <!--span#lottoNumber-->
+    <span id="lottoNumber" style="font-size:2em; color:red;">
+        생성된 로또번호는 여기에 출력됩니다.
+    </span>
+
+</body>
+</html>

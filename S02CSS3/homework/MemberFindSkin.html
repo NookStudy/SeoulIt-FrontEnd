@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>MemberFindSkin</title>
+	<script language="javascript">
+		var url = "./MemberFind_id.html";
+		function change(flag){
+			if(flag==1){
+				url = "./MemberFind_id.html"
+				document.getElementById('iframe').src= url;
+			}else if(flag==2){
+				url = "./MemberFind_Password.html"
+				document.getElementById('iframe').src= url;
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<form name="form1" method="post" >
+		<input type = "radio" name="ex" value="1" checked onclick="change(1);"> 아이디 찾기
+		<input type = "radio" name="ex" value="2" onclick="change(2);"> 비밀번호 찾기
+        <br>
+	</form>
+	<iframe src="./MemberFind_id.html" frameborder="0" name="findIframe" id="iframe"
+	scrolling="auto" width="820" height="500"></iframe>
+
+
+</body>
+</html>

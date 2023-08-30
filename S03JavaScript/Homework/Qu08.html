@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu08.html</title>
+    <script>
+        // do {
+        //     var num = prompt("숫자를 입력하세요")    
+        //     //마지막자리수는 나눈 나머지로 구함
+        //     var lastNum = num%10;
+        //     // console.log(lastNum);
+        //     //첫번째 자리수를 위해 firNum이 10보다 작을때까지 나눠줌
+        //     var firNum = num;
+        //     while(!(firNum<10)){
+        //         firNum = Math.floor(firNum/10);
+        //         // console.log(firNum);
+        //     }
+        //     // console.log(num);
+        //     if(firNum==lastNum){
+        //         alert('성공');
+        //     }else{
+        //         alert('다름')
+        //     }
+        //     var exitcode = prompt('계속하시려면 아무키나 눌러주세요.종료하시려면 x키를 눌러주세요')
+        // } while (!(exitcode=='x'||exitcode=='X'));
+        // document.write('프로그램이 종료되었습니다.')
+
+        var num = 123;
+        var str = String(num);
+        const newArr = Array.from(str);
+        document.write(newArr[0]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00Callback.html
+    </title>
+</head>
+<body>
+    <script>
+        //해당문서의 로드가 완료되면...
+        window.onload = function(){
+            //부모페이지의 DOM을 얻어온 후 텍스트를 설정한다.
+            parent.document.getElementById("callBackData").innerHTML
+                ='콜백되었습니다.';
+            /*
+                iframe 내에서 실행되는 페이지이므로 부모쪽으로 데이터를 보내기 위해
+                parent타겟설정이 필요하다
+            */
+        }
+    </script>
+    <h2>00CallBack.html 파일입니다.</h2>
+</body>
+</html>

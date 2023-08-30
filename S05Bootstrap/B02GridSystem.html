@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./bootstrap-5.3.0/css/bootstrap.css" rel="stylesheet">
+    <script src="bootstrap-5.3.0/js/bootstrap.bundle.js"></script>   
+    <title>B02GridSystem.html</title>
+</head>
+<body>
+    <div class="container">
+        <h2>3개의 동일한컬럼</h2>
+        <!-- 
+            .row: 해당 클래스 하위의 div태그를 삽입하면 inling(가로형)배치가 된다.
+            .col; 부트스트랩의 그리드 시스템을 사용하기 위한 클래스로 가로컬럼의 크기를 결정한다.
+                사용법: col-화면사이즈-가로크기
+            부트스트랩 그리드 시스템은 가로를 총 12개로 분할하여 
+            나누고 싶은 사이즈를 개발자가 결정하면 됩니다.
+         -->
+        <div class="row">
+            <div class="col p-5 bg-primary">첫번째 col</div>
+            <div class="col p-3 bg-dark text-white">두번째 col</div>
+            <div class="col p-5 bg-info">세번째 col</div>
+        </div>
+    </div>
+    <h2>3개의 동일한컬럼_fluid</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col p-5 bg-primary">첫번째 col</div>
+            <div class="col p-3 bg-dark text-white">두번째 col</div>
+            <div class="col p-5 bg-info">세번째 col</div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h2>반응형 컬럼</h2>
+        <h3>sm(Small Device)</h3>
+        <div class="row">
+            <div class="col-sm-4 bg-primary text-white">col-sm-3</div>
+            <div class="col-sm-3 bg-dark text-white" >col-sm-3</div>
+            <div class="col-sm-2 bg-warning">col-sm-3</div>
+            <div class="col-sm-1 bg-info">col-sm-3</div>
+        </div>
+    </div>
+    <div class="container">
+        <h3>lg(Large Device)</h3>
+        <div class="row">
+            <div class="col-lg-4 bg-primary text-white">col-lg-3</div>
+            <div class="col-lg-3 bg-dark text-white">col-lg-3</div>
+            <div class="col-lg-2 bg-warning text-white">col-lg-3</div>
+            <div class="col-lg-1 bg-info text-white">col-lg-3</div>
+        </div>
+    </div>
+
+</body>
+</html>

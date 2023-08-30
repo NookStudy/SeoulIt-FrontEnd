@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>H09Form01.html</title>
+    </head>
+    <body>
+        <!-- form태그
+                : 클라이언트가 입력한 값을 서버로 전송할 때 사용하는 태그로
+                하위태그로는 <input>,<selelct>,<textarea>,<button>이 있다.
+                 주요속성
+                    name : form의 이름. 2개이상 존재할 경우 구분하는 용도로 사용됨.
+                    aciton : 클라이언트가 입력한 값을 전송할 서버의 목적지
+                        즉, URL혹은 경로를 입력한다.
+                    method : 전송방식. get또는 post 2가지가 있다.
+                    target : a태그와 동일하게 form값을 전송할 프레임의
+                        위치를 선택한다.(_black,_self,_parent)
+         -->
+        <h2>form태그로 데이터 전송하기</h2>
+        <h3>GET방식</h3>
+        <form action="https://ktmlms.cafe24.com/" method="get">
+            아이디 : <input type="text" name="user_id"/>
+            <br/>
+            패스워드 : <input type="passowrd" name="user_pwd"/>
+            <br/>
+            <input type="submit" value="전송"/>
+        </form>
+        <!-- 
+            get방식 : 주소줄 뒤에 전송할 값을 쿼리스팅으로 변환하여 서버로 전송.
+            post방식 : 전송한 값이 노출되지 않는다.
+                또한 파일,텍스트 등 모든 값을 전송할 수 있다.
+            *나중에 톰캣에서 쓰나봄
+         -->
+
+        <h3>POST방식</h3>
+        <form action="https://ktmlms.cafe24.com/" method="post">
+            아이디 : <input type="text" name="user_id"/>
+            <br/>
+            패스워드 : <input type="password" name="user_pwd"/>
+            <br/>
+            <input type="submit" value="전송"/>
+        </form>
+    </body>
+</html>

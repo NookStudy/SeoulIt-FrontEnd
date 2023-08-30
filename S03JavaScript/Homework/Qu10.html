@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu10.html</title>
+    <script>
+        var array = new Array();
+        alert('총 5개의 정수를 입력해주세요')
+        for (var i = 1; i <= 5; i++) {
+            array[i-1]=  prompt(i+'번째 정수를 입력해주세요')
+        }
+        console.log(array);
+        document.write('<h2>정수 5개 입력받아 역순으로 출력</h2>');
+        document.write('<hr>');
+        document.write('입력된 수의 배열<br>');
+        for ( var index = 0; index < array.length; index++) {
+            document.write(array[index]+" ");
+        }
+        document.write('<hr>');
+        var reverseArray = new Array();
+        for(var i=0; i<array.length; i++){
+            reverseArray[i] = array[array.length-1-i];
+        }
+        console.log(reverseArray);
+        document.write('역순으로 재정렬된 배열<br>')
+        for ( var index = 0; index < reverseArray.length; index++) {
+            document.write(reverseArray[index]+" ");
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

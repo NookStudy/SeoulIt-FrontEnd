@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 현재 문서의 기본폰트를 지정 */
+        body{
+            font-size: 20px;
+        }
+        /* 해동 문서의 모든 a태그를 선택하여 스타일 적용 */
+        /* 액티브, 링크 호버, 비지트는 위치에 따라 오류가 날 수 있음 */
+        /* 액티브를 맨 위로 올렸더니 액티브 효과가 구현되지 않음. */
+        a:visited{
+            color: blue;
+            /* visit의 경우 underline안먹음 */
+        }
+        a:link{ /* 텍스트에 효과가 전혀없는 상태로 지정 */
+            text-decoration: none;
+            color:black;
+        }
+       
+        /* 링크에 마우스를 올렸을 때 스타일 적용 
+        underline : 밑줄 생성됨*/
+        a:hover{
+            /* text-decoration: line-through;  */
+            text-decoration: underline; color: green;
+            font-size: 30px; font-weight: bold;
+        }
+        a:active{
+            text-decoration: overline; color:red;
+        } 
+         /* 해당 링크에 방문이력이 있을 때 스타일 지정 
+        line-through : 텍스트 중간에 라인 생성됨*/
+       .b{
+        text-decoration: line-through;
+       }
+        /* 링크 클릭시 
+        overline : 윗줄 생성됨.*/
+        
+       
+        
+        a.other{
+            text-decoration: none; color: brown;
+        }
+        a.other:hover{
+            text-decoration: underline; color: #eeeeee;
+            font-size: 20px; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>텍스트 꾸미기</h2>
+    <!-- div>ul.link>(li>a)*5 -->
+    <div>
+        <ul class="link">
+            <li><a href="http://naver.com">네이봐</a></li>
+            <li><a href="http://nate.com">너이트</a></li>
+            <li><a href="http://daum.net">다움</a></li>
+            <li><a href="http://google.com">구글</a></li>
+            <li><a href="http://ikosmo.co.kr">코스모</a></li>
+            <li><a href="http://yahoo.com">야후</a></li>
+        </ul>
+    </div>
+    <div>
+        <a href="http://www.tmon.co.kr" class="other">다른효과주기</a>
+    </div>
+    <p class="b"> line-through; 수정 혹은 지울것. 취소선</p>
+</body>
+</html>
